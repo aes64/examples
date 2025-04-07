@@ -1,0 +1,14 @@
+body {
+    margin: 0 auto;
+    width: 75%;
+}
+
+
+.redBox {
+    background-color: tomato;
+    width: 50%;
+    height: 150px;
+    padding: 20px;
+}
+
+#myBox {}

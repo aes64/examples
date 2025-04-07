@@ -1,0 +1,118 @@
+body {
+    padding-top: 100px;
+}
+
+.container {
+    color: royalblue;
+    margin: 60px auto;
+    width: 500px;
+    border: 5px solid royalblue;
+    border-radius: 15px;
+    background-color: #edede5a9;
+    min-height: 100px;
+}
+
+.form {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container-title {
+    text-align: center;
+}
+
+.input {
+    color: royalblue;
+    border: none;
+    border-bottom: 2px solid royalblue;
+    width: 340px;
+    height: 35px;
+    background-color: #edede528;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 400px;
+    gap: 10px;
+    padding: 0;
+}
+
+.item {
+    list-style: none;
+    text-decoration: none;
+    border: none;
+}
+
+.button-submit {
+    font-size: larger;
+    border: 2px solid royalblue;
+    ;
+    border-radius: 10px;
+}
+
+.button-delete {
+    color: royalblue;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-image: url(./images/cancel.svg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.edit-button {
+    width: 10px;
+    height: 10px;
+    background-image: url(./images/edit_icon.svg);
+    background-position: center;
+    background-size: cover;
+    border: none;
+    margin: 10px;
+}
+
+.popup-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: visibility 0s, opacity .5s linear;
+    width: 100vw;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.popup {
+    border: 5px solid royalblue;
+    position: absolute;
+    border-radius: 15px;
+    width: 500px;
+    height: 220px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 60px auto auto;
+    width: 200px;
+}
+
+.button {
+    width: 70px;
+    height: 40px;
+}

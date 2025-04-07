@@ -1,0 +1,47 @@
+body {
+    width: 75%;
+    margin: 100px auto;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 520px;
+    border: none;
+    padding: 10px 20px;
+    margin: auto;
+
+}
+
+.description {
+    max-width: 700px;
+}
+
+.photo {
+    margin: auto;
+    width: 700px;
+    min-height: 300px;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.button-previous {
+    background-image: url(./images/keyboard-arrow-left_119012.svg);
+}
+
+.button-next {
+    background-image: url(./images/keyboard-arrow-right_119011.svg);
+}
