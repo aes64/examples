@@ -15,7 +15,7 @@
     <button id="myBtn" onclick="console.log('test')">test</button>
 
     <hr>
-    <input type="text" placeholder="+7 (799) 800-11-20">
+    <input type="text" class="phone" placeholder="+7 (799) 800-11-20">
     <hr>
 
 
@@ -25,6 +25,42 @@
     <p>Как перехватывать клики на кнопке? Для добавления обработчика нужно получить доступ к элементу. Если мы не
         получим доступ, то браузер не будет знать, события какого элемента ему отслеживать?
     </p>
+
+
+    <form id="myForm">
+        <div>
+            Имя
+            <br>
+            <input type="text" name="firstName">
+        </div>
+        <div>
+            Фамилия
+            <br>
+            <input type="text" name="lastName">
+        </div>
+        <div>
+            Field
+            <br>
+            <select name="gender" id="">
+                <option value="male">М</option>
+                <option value="female">Ж</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" name="haveAnimal">
+                Есть ли у вас домашнее животное
+            </label>
+        </div>
+        <div>
+            Имя домашнего животного
+            <br>
+            <input type="text" name="animalName" disabled>
+        </div>
+        <div>
+            <input type="submit" name="submit" disabled>
+        </div>
+    </form>
 
 
     <script src="./js/script.js"></script>

@@ -1,0 +1,34 @@
+.container {
+    width: 75%;
+    margin: 200px auto;
+    border: solid 1px black;
+    overflow: hidden;
+
+}
+
+.title {
+    margin: 20px;
+}
+
+.navigation {
+    padding: 20px;
+    font-size: 20px;
+    color: aliceblue;
+    background-color: rgb(68, 68, 180);
+}
+
+.text {
+    visibility: hidden;
+    margin: 0;
+}
+
+.сollapse-content {
+    display: block;
+    height: 0;
+    padding: 0 10px;
+    transition: all 0.4s ease-out;
+}
+
+.active {
+    padding: 10px;
+}

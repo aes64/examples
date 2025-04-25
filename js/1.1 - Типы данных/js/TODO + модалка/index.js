@@ -7,7 +7,7 @@ const input = document.querySelector(".input");
 
 let parent;
 
-form.addEventListener("submit", createItem);
+form.addEventListener("click", createItem);
 
 const handler = (e) => {
     if (e.target.value == "yes") {
@@ -28,47 +28,56 @@ function removeItem(e) {
     popup.removeAttribute("hidden");
 }
 
+
 function edit(e) {
     e.preventDefault();
-    buttonAdd.setAttribute('hidden', '')
-    form.removeEventListener('submit', createItem)
-    input.focus();
-    input.value = e.target.parentElement.textContent;
-    const buttonSaveChanges = document.createElement('button');
+    const btn = e.target;
+    buttonAdd.setAttribute('hidden', '') //исчезает кнопка добавления нового айтема
+    form.removeEventListener('click', createItem)//листнер снят
+    input.focus();//фокус на инпут
+    const textElem = e.target.parentElement.childNodes[0];
+    input.value = textElem.textContent; // в редакторе текст айтема
+    const buttonSaveChanges = document.createElement('button'); // создаем кнопку сохранить
     buttonSaveChanges.textContent = 'Сохранить'
-    form.appendChild(buttonSaveChanges);
+    form.appendChild(buttonSaveChanges);//добавляем ее в дерево
+    // buttonSaveChanges.addEventListener('click', saveChanges());
+    buttonSaveChanges.addEventListener('click', function (e) {
+        saveChanges(e, btn);
+    });
+}
 
-    form.addEventListener('click', (event) => {
-        //buttonSaveChanges.addEventListener('click', (event) => {
-        event.preventDefault()
-        console.log(e.target.parentElement)
-
-        e.target.parentElement.textContent = input.value //?? нет кнопок в родительском элем
-        input.value = '';
-        buttonSaveChanges.remove();
-        buttonAdd.removeAttribute("hidden");
-        form.addEventListener('submit', createItem) //?? ресет 
-    })
-
+function saveChanges(e, btn) {
+    e.target.remove();
+    e.target.removeEventListener('click', saveChanges)
+    buttonAdd.removeAttribute('hidden', '')
+    form.addEventListener('click', createItem)
+    btn.parentElement.childNodes[0].textContent = input.value;
+    input.value = '';
 }
 
 function createItem(e) {
-    e.preventDefault();
-    const inputText = input.value;
-    const nodeItem = document.createElement("li"); // pocket
-    nodeItem.className = "item";
-    nodeItem.textContent = inputText;
+    e.preventDefault()
+    if (e.target.classList.contains("button-submit")) {
+        const inputText = input.value;
+        const nodeItem = document.createElement("li"); // pocket
+        nodeItem.className = "item";
+        const span = document.createElement("span");
+        span.textContent = inputText;
+        span.className = "text"
+        const button = document.createElement("button"); //apple
+        button.className = "button-delete";
+        button.addEventListener("click", removeItem);
+        const buttonEdit = document.createElement("button");
+        buttonEdit.classList.add("edit-button");
+        buttonEdit.addEventListener('click', edit)
+        nodeItem.appendChild(span)
+        nodeItem.appendChild(buttonEdit);
+        nodeItem.appendChild(button);
+        list.append(nodeItem); // go to room
+        input.value = "";
+    }
 
-    const button = document.createElement("button"); //apple
-    button.className = "button-delete";
-    button.addEventListener("click", removeItem);
-    const buttonEdit = document.createElement("button");
-    buttonEdit.classList.add("edit-button");
-    buttonEdit.addEventListener('click', edit)
-    nodeItem.appendChild(buttonEdit);
-    nodeItem.appendChild(button);
-    list.append(nodeItem); // go to room
-    input.value = "";
+
 
 }
 

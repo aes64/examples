@@ -1,0 +1,69 @@
+body {
+    width: 75%;
+    margin: 100px auto;
+}
+
+.slider {
+    border: 2px solid rgb(15, 15, 15);
+    position: relative;
+    width: 500px;
+    overflow: hidden;
+    margin: 200px auto;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.button-previous {
+    background-image: url(./images/keyboard-arrow-left_119012.svg);
+}
+
+.button-next {
+    background-image: url(./images/keyboard-arrow-right_119011.svg);
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    width: 1500px;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+}
+
+.gallery-item {
+    width: 500px;
+    border: none;
+    height: 300px;
+}
+
+.wrapper {
+    width: 500px;
+    background-color: yellow;
+    display: flex;
+    display: none;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+}

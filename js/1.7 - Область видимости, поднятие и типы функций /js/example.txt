@@ -1,0 +1,19 @@
+const tryMe = "Я в глобальной область видимости";
+
+function tryFN() {
+    const tryMe = "Я вобласти видимости функуии трай";
+
+    for (let index = 0; index < 1; index++) {
+        
+        //const tryMe = "Я вобласти видимости цикла ФОР";
+
+        if (true) {
+            const tryMe = "Я вобласти видимости IF";
+            
+        }
+        console.log(tryMe); //трай
+        
+    }
+    console.log(tryMe); //трай
+
+}
